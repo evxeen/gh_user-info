@@ -6,7 +6,9 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <img src={logo} alt="logo" />
-      <input type="text" />
+      <form>
+        <input type="text" />
+      </form>
     </div>
   );
 };
