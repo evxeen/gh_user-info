@@ -1,0 +1,23 @@
+.header {
+  background-color: #0064EB;
+  display: flex;
+  align-items: center;
+  padding: 16px 40px;
+
+  img {
+    margin-right: 22px;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    width: 500px;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    background: #FFFFFF url("../../assets/icons/search.svg") no-repeat 20px;
+    padding: 8px 14px 8px 44px;
+  }
+}
