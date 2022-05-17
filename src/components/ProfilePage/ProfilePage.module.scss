@@ -1,0 +1,48 @@
+.profilePage {
+  border: 2px solid green;
+  display: flex;
+
+
+
+  .userInfo {
+    border: 2px solid red;
+    padding: 40px 56px;
+
+    .userPhoto {
+      border-radius: 50%;
+    }
+
+    .userName {
+      font-weight: 600;
+      font-size: 26px;
+      margin-top: 28px;
+    }
+
+    .userLink {
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 400;
+      font-size: 18px;
+      color: #0064EB;
+      margin-top: 12px;
+    }
+
+    .subsBlock {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+
+      img {
+        margin-right: 8px;
+      }
+      span {
+        margin-right: 16px;
+      }
+    }
+
+  }
+
+  .reposInfo {
+
+  }
+}
