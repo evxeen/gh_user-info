@@ -1,7 +1,7 @@
 import { SET_REPOS, SET_USER } from "../config";
 
 const initialState = {
-  user: {},
+  user: "",
   repositories: [],
 };
 
