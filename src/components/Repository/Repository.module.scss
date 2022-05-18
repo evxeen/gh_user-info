@@ -1,23 +1,23 @@
 .repository {
-  background-color: #FFFFFF;
   margin-top: 24px;
   padding: 24px 32px;
   border-radius: 6px;
+  background-color: #FFFFFF;
 
-  .repositoryName {
-    font-family: 'Inter';
-    font-style: normal;
+  .name {
     font-weight: 500;
     font-size: 24px;
     color: #0064EB;
     text-decoration: none;
+
+    &:hover {
+      color: red;
+    }
   }
-  .repositoryDesc {
-    font-family: 'Inter';
-    font-style: normal;
+  .description {
+    margin-top: 16px;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
-    margin-top: 16px;
   }
 }

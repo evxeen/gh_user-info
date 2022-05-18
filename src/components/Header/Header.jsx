@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/icons/Vector.svg";
-import styles from "./Header.module.scss";
+import s from "./Header.module.scss";
 import { useDispatch } from "react-redux";
 import {
   getReposAction,
@@ -22,10 +22,11 @@ export const Header = () => {
   };
 
   return (
-    <div className={styles.header}>
-      <img src={logo} alt="logo" />
+    <div className={s.header}>
+      <img className={s.logo} src={logo} alt="logo" />
       <form onSubmit={submitFormHandler}>
         <input
+          className={s.searchField}
           type="text"
           value={searchInput}
           onChange={inputChangeHandler}
