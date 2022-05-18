@@ -5,7 +5,7 @@ import following from "../../assets/icons/following.svg";
 import { useSelector } from "react-redux";
 
 export const ProfilePage = () => {
-  const { user } = useSelector((state) => state);
+  const { user, repositories } = useSelector((state) => state);
   return (
     <div className={s.profilePage}>
       <div className={s.userInfo}>
@@ -21,7 +21,15 @@ export const ProfilePage = () => {
           <span>{user.following} following</span>
         </div>
       </div>
-      <div className={s.reposInfo}>{""}</div>
+      <div className={s.reposInfo}>
+        <h2>Repositories (249)</h2>
+        {repositories.map((rep, index) => (
+          <div key={index} className={s.repository}>
+            <p className={s.repositoryName}>{rep.name}</p>
+            <p className={s.repositoryDesc}>{rep.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
