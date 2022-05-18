@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { profileReducer } from "./reducers/profileReducer";
-import { profileWatcher } from "./saga/getProfileSaga";
+import { rootSagas } from "./saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,4 +15,4 @@ export const store = createStore(
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(profileWatcher);
+sagaMiddleware.run(rootSagas);

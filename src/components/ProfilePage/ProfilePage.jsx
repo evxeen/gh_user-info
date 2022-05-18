@@ -1,13 +1,11 @@
 import React from "react";
 import s from "./ProfilePage.module.scss";
-import userImage from "../../assets/icons/userImg.png";
 import followers from "../../assets/icons/followers.svg";
 import following from "../../assets/icons/following.svg";
 import { useSelector } from "react-redux";
 
 export const ProfilePage = () => {
   const { user } = useSelector((state) => state);
-  console.log(user);
   return (
     <div className={s.profilePage}>
       <div className={s.userInfo}>
@@ -23,7 +21,7 @@ export const ProfilePage = () => {
           <span>{user.following} following</span>
         </div>
       </div>
-      <div className={s.reposInfo}></div>
+      <div className={s.reposInfo}>{""}</div>
     </div>
   );
 };

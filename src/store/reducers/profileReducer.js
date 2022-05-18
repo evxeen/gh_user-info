@@ -1,3 +1,5 @@
+import { SET_REPOS, SET_USER } from "../config";
+
 const initialState = {
   user: {},
   repositories: [],
@@ -5,9 +7,9 @@ const initialState = {
 
 export const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_USER":
+    case SET_USER:
       return { ...state, user: action.payload };
-    case "SET_REPOS":
+    case SET_REPOS:
       return { ...state, repositories: [...action.payload] };
     default:
       return state;
