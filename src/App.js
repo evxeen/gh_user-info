@@ -7,7 +7,6 @@ import { ResultMessage } from "./components/ResultMessage/ResultMessage";
 function App() {
   const { user } = useSelector((state) => state);
 
-  console.log(user.repos_url);
   return (
     <div className="wrapper">
       <Header />

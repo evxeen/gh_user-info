@@ -1,6 +1,7 @@
 import {
   GET_REPOS,
   GET_USER,
+  SET_LOADING,
   SET_MESSAGE,
   SET_REPOS,
   SET_STATE,
@@ -33,5 +34,10 @@ export const setStateAction = (payload) => ({
 
 export const setMessageAction = (payload) => ({
   type: SET_MESSAGE,
+  payload: payload,
+});
+
+export const setLoadingAction = (payload) => ({
+  type: SET_LOADING,
   payload: payload,
 });
