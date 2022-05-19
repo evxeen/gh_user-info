@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/icons/logo.svg";
 import s from "./Header.module.scss";
 import { useDispatch } from "react-redux";
-import {
-  getReposAction,
-  getUserAction,
-} from "../../store/actions/profileActions";
+import { getReposAction, getUserAction } from "../../store/actions/actions";
 
 export const Header = () => {
   const [searchInput, setSearchInput] = useState("");

@@ -3,6 +3,7 @@ import {
   GET_USER,
   SET_MESSAGE,
   SET_REPOS,
+  SET_STATE,
   SET_USER,
 } from "../config";
 
@@ -22,6 +23,11 @@ export const setUserAction = (payload) => ({
 
 export const setReposAction = (payload) => ({
   type: SET_REPOS,
+  payload: payload,
+});
+
+export const setStateAction = (payload) => ({
+  type: SET_STATE,
   payload: payload,
 });
 
