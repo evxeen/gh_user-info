@@ -1,11 +1,18 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { setReposAction } from "../actions/profileActions";
+import { setMessageAction, setReposAction } from "../actions/profileActions";
 import { GET_REPOS } from "../config";
 import { fetchRepos } from "../../api/fetchProfile";
 
 function* reposWorker(action) {
-  const { data } = yield call(fetchRepos, action.payload);
-  yield put(setReposAction(data));
+  try {
+    const data = yield call(fetchRepos, action.payload);
+    if (data.length === 0) {
+      throw new Error("Repository list is empty");
+    }
+    yield put(setReposAction(data));
+  } catch (e) {
+    yield put(setMessageAction(e.message));
+  }
 }
 
 export function* reposWatcher() {

@@ -1,8 +1,9 @@
-import { SET_REPOS, SET_USER } from "../config";
+import { SET_MESSAGE, SET_REPOS, SET_USER } from "../config";
 
 const initialState = {
-  user: "",
+  user: null,
   repositories: [],
+  message: "Start with searching a GitHub user",
 };
 
 export const profileReducer = (state = initialState, action) => {
@@ -11,6 +12,8 @@ export const profileReducer = (state = initialState, action) => {
       return { ...state, user: action.payload };
     case SET_REPOS:
       return { ...state, repositories: [...action.payload] };
+    case SET_MESSAGE:
+      return { ...state, message: action.payload };
     default:
       return state;
   }

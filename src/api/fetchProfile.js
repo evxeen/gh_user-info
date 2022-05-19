@@ -1,7 +1,11 @@
-import axios from "axios";
+export const fetchUser = (user) => {
+  return fetch(`https://api.github.com/users/${user}`).then((data) =>
+    data.json()
+  );
+};
 
-export const fetchUser = (user) =>
-  axios.get(`https://api.github.com/users/${user}`);
-
-export const fetchRepos = (user) =>
-  axios.get(`https://api.github.com/users/${user}/repos`);
+export const fetchRepos = (user) => {
+  return fetch(`https://api.github.com/users/${user}/repos`).then((data) =>
+    data.json()
+  );
+};

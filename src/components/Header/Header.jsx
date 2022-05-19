@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/icons/Vector.svg";
+import logo from "../../assets/icons/logo.svg";
 import s from "./Header.module.scss";
 import { useDispatch } from "react-redux";
 import {
