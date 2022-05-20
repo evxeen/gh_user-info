@@ -1,6 +1,7 @@
 import {
   GET_REPOS,
   GET_USER,
+  SET_CURRENT_PAGE,
   SET_LOADING,
   SET_MESSAGE,
   SET_REPOS,
@@ -39,5 +40,10 @@ export const setMessageAction = (payload) => ({
 
 export const setLoadingAction = (payload) => ({
   type: SET_LOADING,
+  payload: payload,
+});
+
+export const setCurrentPageAction = (payload) => ({
+  type: SET_CURRENT_PAGE,
   payload: payload,
 });

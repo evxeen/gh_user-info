@@ -3,6 +3,7 @@ import { ReactComponent as ArrowL } from "../../assets/icons/arrowL.svg";
 import { ReactComponent as ArrowR } from "../../assets/icons/arrowR.svg";
 import s from "./Pagination.module.scss";
 import { useDispatch, useSelector } from "react-redux";
+import { setCurrentPageAction } from "../../store/actions/actions";
 
 export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
   const { repositories, currentPage, perPage } = useSelector((state) => state);
@@ -25,9 +26,7 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
             ? `${s.button} ${s.disabled}`
             : s.button
         }
-        onClick={() =>
-          dispatch({ type: "SET_CURRENT_PAGE", payload: currentPage - 1 })
-        }
+        onClick={() => dispatch(setCurrentPageAction(currentPage - 1))}
       >
         <ArrowL className={s.arrow} />
       </button>
@@ -38,9 +37,7 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
             className={
               currentPage === page ? `${s.pageBtn} ${s.active}` : `${s.pageBtn}`
             }
-            onClick={() =>
-              dispatch({ type: "SET_CURRENT_PAGE", payload: page })
-            }
+            onClick={() => dispatch(setCurrentPageAction(page))}
           >
             {page}
           </span>
@@ -52,9 +49,7 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
             ? `${s.button} ${s.disabled}`
             : s.button
         }
-        onClick={() =>
-          dispatch({ type: "SET_CURRENT_PAGE", payload: currentPage + 1 })
-        }
+        onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
       >
         <ArrowR className={s.arrow} />
       </button>
