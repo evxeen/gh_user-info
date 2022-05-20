@@ -4,7 +4,7 @@ import { ReactComponent as ArrowR } from "../../assets/icons/arrowR.svg";
 import s from "./Pagination.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 
-export const Pagination = () => {
+export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
   const { repositories, currentPage, perPage } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -15,6 +15,10 @@ export const Pagination = () => {
 
   return (
     <div className={s.pagination}>
+      <p className={s.info}>
+        {`${firstPageIndex + 1} - ${lastPageIndex}`} of {repositories.length}{" "}
+        items
+      </p>
       <button
         className={
           currentPage === pageNumbers.length - pageNumbers.length + 1

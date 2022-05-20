@@ -31,9 +31,12 @@ export const RepositoriesBlock = () => {
               />
             ))}
           </div>
+          <Pagination
+            firstPageIndex={firstPageIndex}
+            lastPageIndex={lastPageIndex}
+          />
         </>
       )}
-      <Pagination />
     </div>
   );
 };

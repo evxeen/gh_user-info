@@ -4,6 +4,11 @@
   justify-content: flex-end;
   margin-top: 25px;
 
+  .info {
+    font-size: 14px;
+    color: #808080;
+  }
+
   .button {
     width: 18px;
     border: none;
@@ -21,7 +26,6 @@
     .pageBtn {
       display: inline-block;
       padding: 3px 7px;
-      font-weight: 400;
       font-size: 14px;
       align-items: center;
       color: #808080;
