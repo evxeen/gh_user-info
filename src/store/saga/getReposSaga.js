@@ -12,8 +12,8 @@ function* reposWorker(action) {
   try {
     yield put(setLoadingAction(true));
     const data = yield call(fetchRepos, action.payload);
-    if (data.length === 0) {
-      yield put(setReposAction(data));
+    if (data.message === "Not Found") {
+      yield put(setReposAction([]));
       yield put(setStateAction("nfRepos"));
       yield put(setLoadingAction(false));
       throw new Error("Repository list is empty");

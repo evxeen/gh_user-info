@@ -13,10 +13,9 @@ export const RepositoriesBlock = () => {
   const currentRepos = repositories.slice(firstPageIndex, lastPageIndex);
 
   return (
-    <div className={s.reposInfo}>
-      {!repositories.length ? (
-        <ResultMessage />
-      ) : (
+    <div className={s.repositoriesBlock}>
+      {!repositories.length && <ResultMessage />}
+      {repositories.length > 0 && (
         <>
           <h2 className={s.repositories}>
             Repositories ({repositories.length})
