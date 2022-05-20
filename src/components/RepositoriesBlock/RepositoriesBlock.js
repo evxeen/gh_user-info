@@ -3,9 +3,15 @@ import s from "./RepositoriesBlock.module.scss";
 import { useSelector } from "react-redux";
 import { Repository } from "../Repository/Repository";
 import { ResultMessage } from "../ResultMessage/ResultMessage";
+import { Pagination } from "../Pagination/Pagination";
 
 export const RepositoriesBlock = () => {
-  const { repositories } = useSelector((state) => state);
+  const { repositories, currentPage, perPage } = useSelector((state) => state);
+
+  const lastPageIndex = currentPage * perPage;
+  const firstPageIndex = lastPageIndex - perPage;
+  const currentRepos = repositories.slice(firstPageIndex, lastPageIndex);
+
   return (
     <div className={s.reposInfo}>
       {!repositories.length ? (
@@ -15,16 +21,19 @@ export const RepositoriesBlock = () => {
           <h2 className={s.repositories}>
             Repositories ({repositories.length})
           </h2>
-          {repositories.map((rep, index) => (
-            <Repository
-              key={index}
-              name={rep.name}
-              desc={rep.description}
-              link={rep.html_url}
-            />
-          ))}
+          <div className={s.reposContainer}>
+            {currentRepos.map((rep, index) => (
+              <Repository
+                key={index}
+                name={rep.name}
+                desc={rep.description}
+                link={rep.html_url}
+              />
+            ))}
+          </div>
         </>
       )}
+      <Pagination />
     </div>
   );
 };

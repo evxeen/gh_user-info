@@ -12,6 +12,8 @@ const initialState = {
   stateApp: "initial",
   message: "Start with searching a GitHub user",
   isLoading: false,
+  currentPage: 1,
+  perPage: 4,
 };
 
 export const profileReducer = (state = initialState, action) => {
@@ -26,6 +28,8 @@ export const profileReducer = (state = initialState, action) => {
       return { ...state, message: action.payload };
     case SET_LOADING:
       return { ...state, isLoading: action.payload };
+    case "SET_CURRENT_PAGE":
+      return { ...state, currentPage: action.payload };
     default:
       return state;
   }
