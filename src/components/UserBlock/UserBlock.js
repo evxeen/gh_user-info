@@ -22,10 +22,14 @@ export const UserBlock = () => {
         {user.login}
       </a>
       <div className={s.subsBlock}>
-        <img src={followers} alt="followers" />
-        <span>{countFollow(user.followers)} followers</span>
-        <img src={following} alt="following" />
-        <span>{countFollow(user.following)} following</span>
+        <div>
+          <img src={followers} alt="followers" />
+          <span>{countFollow(user.followers)} followers</span>
+        </div>
+        <div>
+          <img src={following} alt="following" />
+          <span>{countFollow(user.following)} following</span>
+        </div>
       </div>
     </div>
   );

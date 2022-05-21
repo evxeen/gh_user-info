@@ -20,5 +20,18 @@
     color: #000000;
     background: #FFFFFF url("../../assets/icons/search.svg") no-repeat 20px;
     padding: 8px 14px 8px 44px;
+
+    @media (min-width: 480px) and (max-width: 640px) {
+      width: 300px;
+    }
+
+    @media (min-width: 320px) and (max-width: 479px) {
+      width: 200px;
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 479px) {
+    padding:  10px 20px;
   }
 }

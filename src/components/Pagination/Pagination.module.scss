@@ -4,6 +4,11 @@
   justify-content: flex-end;
   margin-top: 25px;
 
+  .wr {
+    display: flex;
+  }
+
+
   .info {
     font-size: 14px;
     color: #808080;
@@ -20,6 +25,7 @@
       pointer-events: none;
       opacity: 0.4;
     }
+
   }
 
   .pages {
@@ -32,6 +38,9 @@
       cursor: pointer;
       margin-right: 10px;
 
+      @media (max-width: 639px) and (min-width: 320px){
+        margin-right: 1px;
+      }
     }
 
     span:last-child {
@@ -46,5 +55,9 @@
 
   .arrow:hover * {
     stroke: #0064EB;
+  }
+
+  @media (max-width: 639px) and (min-width: 320px){
+    flex-direction: column;
   }
 }

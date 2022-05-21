@@ -28,31 +28,35 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
         {`${firstPageIndex + 1} - ${lastPageIndex}`} of {repositories.length}{" "}
         items
       </p>
-      <button
-        className={buttonLeft}
-        onClick={() => dispatch(setCurrentPageAction(currentPage - 1))}
-      >
-        <ArrowL className={s.arrow} />
-      </button>
-      <div className={s.pages}>
-        {pageNumbers.map((page, index) => (
-          <span
-            key={index}
-            className={
-              currentPage === page ? `${s.pageBtn} ${s.active}` : `${s.pageBtn}`
-            }
-            onClick={() => dispatch(setCurrentPageAction(page))}
-          >
-            {page}
-          </span>
-        ))}
+      <div className={s.wr}>
+        <button
+          className={buttonLeft}
+          onClick={() => dispatch(setCurrentPageAction(currentPage - 1))}
+        >
+          <ArrowL className={s.arrow} />
+        </button>
+        <div className={s.pages}>
+          {pageNumbers.map((page, index) => (
+            <span
+              key={index}
+              className={
+                currentPage === page
+                  ? `${s.pageBtn} ${s.active}`
+                  : `${s.pageBtn}`
+              }
+              onClick={() => dispatch(setCurrentPageAction(page))}
+            >
+              {page}
+            </span>
+          ))}
+        </div>
+        <button
+          className={buttonRight}
+          onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
+        >
+          <ArrowR className={s.arrow} />
+        </button>
       </div>
-      <button
-        className={buttonRight}
-        onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
-      >
-        <ArrowR className={s.arrow} />
-      </button>
     </div>
   );
 };
