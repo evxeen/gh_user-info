@@ -21,6 +21,7 @@ function* profileWorker(action) {
     }
     const repos = yield call(fetchUser, action.payload, "/repos");
     if (repos.length === 0 || repos.message === "Not Found") {
+      yield put(setUserAction(user));
       yield put(setReposAction([]));
       yield put(setStateAction("nfRepos"));
       yield put(setLoadingAction(false));
