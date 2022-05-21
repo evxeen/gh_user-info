@@ -12,7 +12,7 @@ function* reposWorker(action) {
   try {
     yield put(setLoadingAction(true));
     const data = yield call(fetchRepos, action.payload);
-    if (data.message === "Not Found") {
+    if (data.length === 0 || data.message === "Not Found") {
       yield put(setReposAction([]));
       yield put(setStateAction("nfRepos"));
       yield put(setLoadingAction(false));

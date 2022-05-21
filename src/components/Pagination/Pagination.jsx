@@ -14,6 +14,14 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
     pageNumbers.push(i);
   }
 
+  const buttonLeft =
+    currentPage === pageNumbers.length - pageNumbers.length + 1
+      ? `${s.button} ${s.disabled}`
+      : s.button;
+
+  const buttonRight =
+    currentPage === pageNumbers.length ? `${s.button} ${s.disabled}` : s.button;
+
   return (
     <div className={s.pagination}>
       <p className={s.info}>
@@ -21,11 +29,7 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
         items
       </p>
       <button
-        className={
-          currentPage === pageNumbers.length - pageNumbers.length + 1
-            ? `${s.button} ${s.disabled}`
-            : s.button
-        }
+        className={buttonLeft}
         onClick={() => dispatch(setCurrentPageAction(currentPage - 1))}
       >
         <ArrowL className={s.arrow} />
@@ -44,11 +48,7 @@ export const Pagination = ({ firstPageIndex, lastPageIndex }) => {
         ))}
       </div>
       <button
-        className={
-          currentPage === pageNumbers.length
-            ? `${s.button} ${s.disabled}`
-            : s.button
-        }
+        className={buttonRight}
         onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
       >
         <ArrowR className={s.arrow} />
