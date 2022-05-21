@@ -11,8 +11,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="content">
-        {!user && <ResultMessage />}
-        {user && <ProfilePage />}
+        {user ? <ProfilePage /> : <ResultMessage />}
       </div>
     </div>
   );

@@ -1,15 +1,14 @@
 .ldsDualRing {
   display: inline-block;
   margin: 0 auto;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 
   &:after {
     content: " ";
     display: block;
     width: 120px;
     height: 120px;
-    margin: 8px;
     border-radius: 50%;
     border: 6px solid #0064EB;
     border-color: #0064EB transparent #0064EB transparent;

@@ -12,6 +12,10 @@
   .info {
     font-size: 14px;
     color: #808080;
+
+    @media (max-width: 639px) and (min-width: 320px){
+      margin-bottom: 20px;
+    }
   }
 
   .button {
